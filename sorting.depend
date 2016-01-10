@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1452452671 source:d:\filmy\projekty c++\sorting\source file\main.cpp
+	"BSORT.h"
+	"INSORT.h"
+	"SELSORT.h"
+
+1452451728 d:\filmy\projekty c++\sorting\include\bsort.h
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1452452703 source:d:\filmy\projekty c++\sorting\src\bsort.cpp
+	"BSORT.h"
+
+1452452715 source:d:\filmy\projekty c++\sorting\src\insort.cpp
+	"INSORT.h"
+
+1452452639 d:\filmy\projekty c++\sorting\include\insort.h
+	<stdio.h>
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1452442210 d:\filmy\projekty c++\sorting\include\selsort.h
+	<stdio.h>
+	<iostream>
+
+1452442888 source:d:\filmy\projekty c++\sorting\src\selsort.cpp
+	"SELSORT.h"
+
