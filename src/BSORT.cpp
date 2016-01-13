@@ -1,7 +1,8 @@
 #include "BSORT.h"
-time_t czasStart;
-time_t czasStop;
 
+
+//#include "chrono_io"
+typedef chrono::high_resolution_clock Clock;
  void BSORT::setTrials(int trials) {
     trial = trials;
 }
@@ -19,7 +20,8 @@ double counttime(clock_t czas)
 }
 void bubble_sort(long list[], long n)
 {
-    czasStart = time(NULL);
+
+   // czasStart = time(NULL);
     //czekaj(3);
   long c, d, t;
 
@@ -37,37 +39,43 @@ void bubble_sort(long list[], long n)
       }
     }
   }
-  czasStop = time (NULL);
+ // czasStop = time (NULL);
 }
 
 
 
 void BSORT::CinArray()
 {
-    srand( time( NULL ) );
-long array[100], n, c, d, swap;
 
-  cout<<("Enter number of elements\n");
+
+  //  srand( time( NULL ) );
+long array[10000], n, c, d, swap;
+
+ // cout<<("Enter number of elements\n");
   n=trial;
 
-  cout<<("Enter integers\n");
+ // cout<<("Enter integers\n");
 
   for (c = 0; c < n; c++){
     array[c]=rand();
   }
 
-
+clock_t startTime = clock();
+//_sleep(10);
+auto t1 = Clock::now();
   bubble_sort(array, n);
+auto t2 = Clock::now();
+clock_t endTime = clock();
+clock_t clockTicksTaken = endTime - startTime;
+double timeInseconds = clockTicksTaken/(double) CLOCKS_PER_SEC;
 
-  cout<<("Sorted list in ascending order:\n");
+  cout<<("Sorted list by bubble in ascending order:\n");
 
   for ( c = 0 ; c < n ; c++ )
   {
      cout<<array[c]<<" ";
   }
-cout<<endl;
-cout<<"uplynelo "<<(difftime( czasStop,czasStart))<<endl;
-
+cout<<endl;//difftime( czasStop,czasStart))
+cout<<"uplynelo "<<timeInseconds<<" mikrosekund"<<endl;
+cout<<"chrono "<<chrono::duration_cast<chrono::nanoseconds>(t2-t1).count()<<endl;
 }
-
-

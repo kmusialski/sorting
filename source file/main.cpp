@@ -1,20 +1,36 @@
 #include "BSORT.h"
 #include "INSORT.h"
 #include "SELSORT.h"
+#include<ctime>
+#include <iostream>
 
-SELSORT createSELSORT();
+using namespace std;
+SELSORT createSELSORT(int trials);
 BSORT createBSORT(int trials);
 INSORT createINSORT(int trials);
+
+void Quantity(int *t){
+
+    cout<<"Podaj liczbe losowan"<<endl;
+cin>>(*t);
+
+}
 
 
 int main()
 {
-createBSORT(5);
-createINSORT(5);
-createSELSORT();
+
+int trial =0;
+Quantity(&trial);
+
+    srand( time( NULL ) );
+createBSORT(trial);
+createINSORT(trial);
+createSELSORT(trial);
 }
-SELSORT createSELSORT(){
+SELSORT createSELSORT(int trials){
 SELSORT selsort;
+selsort.setTrials(trials);
 selsort.CinArray();
 return selsort;
 }
@@ -35,3 +51,4 @@ bsort.setTrials(trials);
 bsort.CinArray();
 return bsort;
 }
+

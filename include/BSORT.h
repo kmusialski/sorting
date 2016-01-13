@@ -1,6 +1,8 @@
 #include<iostream>
 #include<ctime>
 #include <cstdlib>
+#include <iomanip>
+#include <chrono>
 #ifndef BSORT_H
 #define BSORT_H
 

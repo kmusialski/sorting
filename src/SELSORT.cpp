@@ -1,16 +1,21 @@
 #include "SELSORT.h"
+typedef chrono::high_resolution_clock Clock;
+ void SELSORT::setTrials(int trials) {
+    trial = trials;
+}
+
 
 void SELSORT::CinArray()
 {
-   int array[100], n, c, d, position, swap;
+clock_t startTime = clock();
 
-   cout<<"Enter number of elements\n";
-   cin>>n;
+  // cout<<"Enter number s of elements\n";
+   n=trial;
 
-   cout<<"Enter integers\n";
+  // cout<<"Enter integers\n";
 
    for ( c = 0 ; c < n ; c++ )
-      cin>>array[c];
+      array[c]=rand();
 
    for ( c = 0 ; c < ( n - 1 ) ; c++ )
    {
@@ -28,9 +33,21 @@ void SELSORT::CinArray()
          array[position] = swap;
       }
    }
+clock_t endTime = clock();
+clock_t clockTicksTaken = endTime - startTime;
+timeInseconds = clockTicksTaken/(double) CLOCKS_PER_SEC;
 
-   cout<<"Sorted list in ascending order:\n";
+}
 
-   for ( c = 0 ; c < n ; c++ )
+void SELSORT::printResult(){
+
+cout<<"Sorted list by selection in ascending order:\n";
+
+   for (c = 0 ; c < n ; c++ ){
       cout<<array[c]<<" ";
+   }
+   cout<<endl;
+cout<<"uplynelo "<<timeInseconds*1000000<<" mikrosekund"<<endl;
+
+
 }

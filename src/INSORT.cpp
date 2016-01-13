@@ -1,5 +1,5 @@
 #include "INSORT.h"
-
+typedef chrono::high_resolution_clock Clock;
  void INSORT::setTrials(int trials) {
     trial = trials;
 }
@@ -7,13 +7,13 @@
 
 void INSORT::CinArray()
 {
-    srand( time( NULL ) );
-  int n, array[1000], c, d, t;
-
-  cout<<"Enter number of elements\n";
+    //srand( time( NULL ) );
+auto t1 = Clock::now();
+clock_t startTime = clock();
+  //cout<<"Enter s number of elements\n";
   n=trial;
 
-  cout<<"Enter integers\n";
+  //cout<<"Enter integers\n";
 
   for (c = 0; c < n; c++) {
     array[c]=rand();
@@ -30,11 +30,21 @@ void INSORT::CinArray()
       d--;
     }
   }
+auto t2 = Clock::now();
+clock_t endTime = clock();
+clock_t clockTicksTaken = endTime - startTime;
+timeInseconds = clockTicksTaken/(double) CLOCKS_PER_SEC;
+//cout<<"chrono "<<chrono::duration_cast<chrono::nanoseconds>(t2-t1).count()<<endl;
+}
 
-  cout<<"Sorted list in ascending order:\n";
+void INSORT::PrintResult(){
+
+  cout<<"Sorted list by insertion in ascending order:\n";
 
   for (c = 0; c <= n - 1; c++) {
     cout<<array[c]<<" ";
   }
   cout<<endl;
+cout<<"uplynelo "<<timeInseconds*1000000<<" nanosekund"<<endl;
+
 }
