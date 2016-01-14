@@ -41,6 +41,10 @@ timeInseconds = clockTicksTaken/(double) CLOCKS_PER_SEC;
 
 void SELSORT::printResult(){
 
+auto t1 = Clock::now();
+CinArray();
+auto t2 = Clock::now();
+
 cout<<"Sorted list by selection in ascending order:\n";
 
    for (c = 0 ; c < n ; c++ ){
@@ -48,6 +52,6 @@ cout<<"Sorted list by selection in ascending order:\n";
    }
    cout<<endl;
 cout<<"uplynelo "<<timeInseconds*1000000<<" mikrosekund"<<endl;
-
+cout<<"uplynelo "<<chrono::duration_cast<chrono::nanoseconds>(t2-t1).count()<<"nanosekund"<<endl;
 
 }

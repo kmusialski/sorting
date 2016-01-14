@@ -76,6 +76,6 @@ double timeInseconds = clockTicksTaken/(double) CLOCKS_PER_SEC;
      cout<<array[c]<<" ";
   }
 cout<<endl;//difftime( czasStop,czasStart))
-cout<<"uplynelo "<<timeInseconds<<" mikrosekund"<<endl;
-cout<<"chrono "<<chrono::duration_cast<chrono::nanoseconds>(t2-t1).count()<<endl;
+cout<<"uplynelo "<<timeInseconds*1000000<<" mikrosekund"<<endl;
+cout<<"uplynelo "<<chrono::duration_cast<chrono::nanoseconds>(t2-t1).count()<<" nanosekund"<<endl;
 }
