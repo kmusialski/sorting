@@ -1,4 +1,4 @@
-#include "SELSORT.h"
+#include "include/SELSORT.h"
 typedef chrono::high_resolution_clock Clock;
  void SELSORT::setTrials(int trials) {
     trial = trials;

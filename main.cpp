@@ -1,6 +1,6 @@
-#include "BSORT.h"
-#include "INSORT.h"
-#include "SELSORT.h"
+#include "include/BSORT.h"
+#include "include/INSORT.h"
+#include "include/SELSORT.h"
 #include<ctime>
 #include <iostream>
 
