@@ -1,2 +1,9 @@
 .idea/
 *.iml
+
+bin/
+obj/
+
+*.dll
+*.o
+*.exe
