@@ -7,5 +7,8 @@
 
 void BubbleSort::sort(vector<int> &num) {
     cout << "Sortowanie babelkowe" << endl;
+}
 
+int BubbleSort::getNumber() {
+    return 4;
 }

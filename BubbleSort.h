@@ -12,6 +12,9 @@ class BubbleSort : public Algorithm{
 
     virtual void sort(vector<int> &num);
 
+    int getNumber();
+
+
 };
 
 

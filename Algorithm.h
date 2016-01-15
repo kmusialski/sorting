@@ -10,8 +10,13 @@ using namespace std;
 
 
 class Algorithm {
+
 public:
+    void execute(vector<int> &num);
+
     virtual void sort(vector<int> &num) = 0;
+
+    virtual int getNumber();
 
 };
 
