@@ -1,54 +1,45 @@
-#include "include/BSORT.h"
-#include "include/INSORT.h"
-#include "include/SELSORT.h"
+
 #include<ctime>
 #include <iostream>
+#include "Algorithm.h"
+#include "BubbleSort.h"
+#include "SelectionSort.h"
+
+Algorithm* getAlgorithm();
+
+void initializeAlgorithms(vector<Algorithm*> &possibleAlgorithms);
 
 using namespace std;
-SELSORT createSELSORT(int trials);
-BSORT createBSORT(int trials);
-INSORT createINSORT(int trials);
 
-void Quantity(int *t){
-
-    cout<<"Podaj liczbe losowan"<<endl;
-cin>>(*t);
-
-}
 
 
 int main()
 {
+    std::vector<int> table (4,100);
+    vector<Algorithm*> possibleAlgorithms;
+    initializeAlgorithms(possibleAlgorithms);
 
-int trial =0;
-Quantity(&trial);
-
-    srand( time( NULL ) );
-createBSORT(trial);
-createINSORT(trial);
-createSELSORT(trial);
-}
-SELSORT createSELSORT(int trials){
-SELSORT selsort;
-selsort.setTrials(trials);
-selsort.CinArray();
-return selsort;
-}
+    for(vector<Algorithm*>::iterator it = possibleAlgorithms.begin(); it != possibleAlgorithms.end(); ++it) {
+        (*it)->sort(table);
+    }
 
 
 
-INSORT createINSORT(int trials){
-INSORT insort;
-insort.setTrials(trials);
-insort.CinArray();
-return insort;
+
+
+
+    return 0;
 }
 
+void initializeAlgorithms(vector<Algorithm*> &possibleAlgorithms) {
+    BubbleSort bubbleSort;
+    SelectionSort selectionSort;
+    possibleAlgorithms.push_back(&bubbleSort);
+    possibleAlgorithms.push_back(&selectionSort);
+}
 
-BSORT createBSORT(int trials){
-BSORT bsort;
-bsort.setTrials(trials);
-bsort.CinArray();
-return bsort;
+Algorithm* getAlgorithm(){
+    BubbleSort sort;
+    return &sort;
 }
 
