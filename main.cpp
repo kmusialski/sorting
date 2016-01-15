@@ -5,7 +5,6 @@
 #include "BubbleSort.h"
 #include "SelectionSort.h"
 
-Algorithm* getAlgorithm();
 
 void initializeAlgorithms(vector<Algorithm*> &possibleAlgorithms);
 
@@ -32,14 +31,8 @@ int main()
 }
 
 void initializeAlgorithms(vector<Algorithm*> &possibleAlgorithms) {
-    BubbleSort bubbleSort;
-    SelectionSort selectionSort;
-    possibleAlgorithms.push_back(&bubbleSort);
-    possibleAlgorithms.push_back(&selectionSort);
+    BubbleSort *bubbleSort = new BubbleSort();
+    SelectionSort *selectionSort = new SelectionSort();
+    possibleAlgorithms.push_back(bubbleSort);
+    possibleAlgorithms.push_back(selectionSort);
 }
-
-Algorithm* getAlgorithm(){
-    BubbleSort sort;
-    return &sort;
-}
-
